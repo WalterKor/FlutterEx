@@ -1,11 +1,14 @@
 package User;
 
+
 public class UserVO {
 	private String userID;
 	private String userPassword;
 	private String userName;
 	private String userGender;
 	private String userEmail;
+	
+	
 	public String getUserID() {
 		return userID;
 	}

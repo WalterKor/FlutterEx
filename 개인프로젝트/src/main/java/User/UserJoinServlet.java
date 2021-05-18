@@ -6,49 +6,51 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 import Utils.MyUtils;
 
 
-@WebServlet("/user/login")
-public class UserLoginServlet extends HttpServlet {
+@WebServlet("/user/join")
+public class UserJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		MyUtils.openJSP("/user/login", request, response);
+		MyUtils.openJSP("/user/join", request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	
+		
 		String userID = request.getParameter("userID");
 		String userPassword = request.getParameter("userPassword");
+		String userName = request.getParameter("userName");
+		String userEamil = request.getParameter("userEamil");
+		String UserGender = request.getParameter("UserGender");
+		
+		/*
+		System.out.println("userID : " +userID);
+		System.out.println("userPassword : " +userPassword);
+		System.out.println("userName : " +userName);
+		System.out.println("userEamil : " +userEamil);
+		System.out.println("UserGender : " +UserGender);
+		*/
 		
 		UserVO vo = new UserVO();
 		vo.setUserID(userID);
 		vo.setUserPassword(userPassword);
+		vo.setUserName(userName);
+		vo.setUserEmail(userEamil);
+		vo.setUserGender(UserGender);
 		
-		int result = UserDAO.loginUser(vo);
+		UserDAO.join(vo);
 		
-		if(result == 1) {
-			
-			HttpSession hs = request.getSession();
-			vo.setUserPassword(null);
-			hs.setAttribute("loginUser", vo);
-			
-			response.sendRedirect("/main/main");
-			return;
-		}
+
 		
-		String errMsg = null;
-		if(result ==2 ) {
-			errMsg = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
-		}
-		request.setAttribute("errMsg", errMsg);
-		doGet(request,response);
+		MyUtils.openJSP("/board/login", request, response);
 		
+		
+				
 	}
 
 }
