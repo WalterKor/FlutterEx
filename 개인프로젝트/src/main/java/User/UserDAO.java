@@ -68,8 +68,7 @@ public class UserDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		String sql = " SELECT * FROM t_user " 
-				 	+"	WHERE uid = ? ";
+		String sql =" SELECT userID, userPassword FROM user WHERE userID = '?' ";
 		
 		try {
 			con = DBUtils.getCon();

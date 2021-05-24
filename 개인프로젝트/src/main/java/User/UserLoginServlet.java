@@ -31,6 +31,7 @@ public class UserLoginServlet extends HttpServlet {
 		vo.setUserPassword(userPassword);
 		
 		int result = UserDAO.loginUser(vo);
+		System.out.println("result : " + result);
 		
 		if(result == 1) {
 			
