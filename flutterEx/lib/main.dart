@@ -23,25 +23,47 @@ class MyApp extends StatelessWidget {
             body: Column(
               children: [
                 Expanded(//남는공간 끝까지 확장하시오
-                  flex: 8,
+                  flex: 1,
                   child: Container(//부모의 최대의 크기까지 늘려라
-                    color: Colors.lime,
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    // height: 100,
-                    color: Colors.green,
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    // height: 50,
                     color: Colors.red,
                   ),
-                )
+                ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.orange,
+              ),
+            ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.yellow,
+              ),
+            ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.green,
+              ),
+            ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.purple,
+              ),
+            ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.blueAccent,
+              ),
+            ),
+            Expanded(//남는공간 끝까지 확장하시오
+              flex: 1,
+              child: Container(//부모의 최대의 크기까지 늘려라
+                color: Colors.white,
+              ),
+            ),
               ],
             ),
 
