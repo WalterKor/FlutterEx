@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
                   flex: 1,
                   child: Container(//부모의 최대의 크기까지 늘려라
                     color: Colors.red,
+
+                    
                   ),
                 ),   
             Expanded(//남는공간 끝까지 확장하시오
